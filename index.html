@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>EECS 4314 | Pink Fluffy Unicorns</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Karla:wght@200;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'heading': ['Fira Sans Condensed', 'serif'],
+                        'sans': ['Overpass', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans text-gray-700 antialiased bg-white">
+    <script>
+        const menu = () => ({
+            showContactInfo: false,
+            showMobileMenu: false,
+        });
+    </script>
+    <div x-data="menu()">
+        <div class="container mx-auto px-6 flex justify-between items-center py-4 h-32">
+            <a href="/" class="text-2xl font-bold text-black tracking-tighter h-full flex items-center">EECS
+                4314 | Assignments <a>
+
+                    <img src="https://img.icons8.com/ios-filled/50/1A1A1A/free-bsd.png" />
+                    <!-- </div> -->
+                    <div class="hidden lg:flex items-center text-xs uppercase tracking-wider ml-4">
+                        <button x-on:click="showContactInfo = true" type="button"
+                            class="uppercase ml-8 ring-2 ring-red-600 rounded-lg px-2">Team</button>
+                        <a href="/a1" class="ml-8">A1</a>
+                        <a href="/a2" class="ml-8">A2</a>
+                        <a href="/a3" class="ml-8">A3</a>
+                        <a href="/a4" class="ml-8">A4</a>
+                    </div>
+                    <template x-if="showContactInfo">
+                        <div
+                            class="z-50 bg-black bg-opacity-50 fixed inset-0 w-screen min-h-screen lg:h-screen lg:flex lg:justify-center lg:items-center p-12">
+                            <div class="w-full max-w-sm bg-white text-xs uppercase shadow-2xl">
+                                <div class="pt-6 pr-6 flex justify-end">
+                                    <button x-on:click="showContactInfo = false" type="button">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div
+                                    class="px-12 text-lg text-semibold pb-12 pt-2 underline decoration-red-500/50 underline-offset-1 decoration-4">
+                                    Benedict Miguel <br />
+                                    Jiachen Wang <br />
+                                    Keshav Gainda <br />
+                                    Ketan Bhandari <br />
+                                    Mohaimen Hassan <br />
+                                    Pegah Fallah <br />
+                                    Shami Sharma <br />
+                                    Sidharth Sudarsan <br />
+                                    Suryam Thaker
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+        </div>
+        <div class="flex justify-center items-center">
+            <button x-on:click="showMobileMenu = true" class="flex lg:hidden uppercase text-xs items-center -mt-6 mb-6">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
+                </svg>
+                Menu
+            </button>
+        </div>
+        <template x-if="showMobileMenu">
+            <div
+                class="md:hidden fixed inset-0 w-full h-full flex flex-col items-center justify-center bg-gray-100 z-40 uppercase space-y-4 text-xl tracking-widest text-center text-black">
+                <button class="absolute top-0 right-0 pr-8 pt-4" x-on:click="showMobileMenu = false" type="button">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </button>
+                <button x-on:click="showContactInfo = true" type="button"
+                    class="uppercase ml-8 ring-2 ring-red-600 rounded-lg px-2">Team</button>
+                <a href="/a1" class="ml-8">A1</a>
+                <a href="/a2" class="ml-8">A2</a>
+                <a href="/a3" class="ml-8">A3</a>
+                <a href="/a4" class="ml-8">A4</a>
+
+            </div>
+    </div>
+    </template>
+    <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12">
+        <div class="lg:col-span-5 py-12 md:px-12 md:py-32 flex items-center justify-center">
+            <div class="max-w-sm">
+                <h1 class="text-5xl md:text-6xl mb-6 font-display text-black leading-tight">Pink Fluffy Unicorns.
+                </h1>
+                <p>
+                    This is a webpage for the software architecture analysis assignments.
+                </p>
+                <p class="italic my-2">EECS 4313: Advanced
+                    Software
+                    Engineering W2023</p>
+                <button x-on:click="showContactInfo = true" type="button"
+                    class="flex items-center mt-8 uppercase text-sm text-black font-semibold">
+                    Team
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="red" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- <script>
+            const slideshow = () => ({
+                current: 0,
+                items: [{
+                    "image": "https://images.unsplash.com/photo-1515555230216-82228b88ea98?auto=format&amp;fit=crop&amp;w=900&amp;q=60",
+                    "url": "/product"
+                }]
+            });
+        </script> -->
+        <div x-data="" class="lg:col-span-7 relative h-52 md:h-72 lg:h-auto">
+            <a href="https://www.freebsd.org/">
+                <img class="absolute inset-0 w-full h-full object-cover"
+                    src="https://1000logos.net/wp-content/uploads/2021/04/FreeBSD-logo.png">
+            </a>
+            <!-- <div class="absolute bottom-0 right-0 grid grid-cols-2">
+                <button class="p-4 md:p-6 bg-white hover:bg-gray-100 hover:opacity-80"
+                    x-on:click="current = current > 0 ? current - 1 : items.length - 1">
+                    <svg class="w-6 h-6 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                </button>
+                <button class="p-4 md:p-6 bg-white hover:bg-gray-100 hover:opacity-80"
+                    x-on:click="current = current < items.length - 1 ? current + 1 : 0">
+                    <svg class="w-6 h-6 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div> -->
+        </div>
+    </div>
+
+    </div>
+
+    <div class="container mx-auto text-center py-12 mt-12 border-t border-gray-200 text-xs uppercase">
+        <div>Webpage for EECS 4314 Winter 2023 Assignments</div>
+        <div class="my-2">Lassonde School of Engineering | York University</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer="defer"></script>
+</body>
+
+</html>
